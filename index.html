@@ -12,6 +12,35 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <div class="col-12 display-message">
+      <p id="message"> </p>
+      </div>
+
+      <h1>Take a Hike!</h1>
+      <h2>and then log it with us!</h2>
+
+      <section id="logged-out-view">
+        <form id="sign-up">
+          <h3>Create an account!</h3>
+          <input type="email" required name="credentials[email]" placeholder="Email">
+          <input type="password" required name="credentials[password]" placeholder="Password">
+          <input type="password" required name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <button type="submit">Submit</button>
+        </form>
+        <form id="sign-in">
+          <h3>Sign In</h3>
+          <input type="email" required name="credentials[email]" placeholder="Email">
+          <input type="password" required name="credentials[password]" placeholder="Password">
+          <button type="submit">Submit</button>
+        </form>
+
+      </section>
+
+      <section id="logged in view">
+
+      </section>
+
+
+
     </body>
 </html>
