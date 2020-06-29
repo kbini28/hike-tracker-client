@@ -16,8 +16,10 @@
       <p id="message"> </p>
       </div>
 
-      <h1>Take a Hike!</h1>
-      <h2>and then log it with us!</h2>
+      <section class="brand-info">
+        <h1>Take a Hike!</h1>
+        <h2>and then log it with us!</h2>
+      </section>
 
       <section id="logged-out-view">
         <form id="sign-up">
@@ -33,11 +35,18 @@
           <input type="password" required name="credentials[password]" placeholder="Password">
           <button type="submit">Submit</button>
         </form>
-
       </section>
 
-      <section id="logged in view">
-
+      <section id="logged-in-view">
+        <form id="change-pass">
+          <h3>Change your password</h3>
+          <input type="password" required name="passwords[old]" placeholder="Old Password">
+          <input type="password" required name="passwords[new]" placeholder="New Password">
+          <button type="submit">Change Password</button>
+        </form>
+        <div id="sign-out">
+          <button>Sign Out</button>
+        </div>
       </section>
 
 

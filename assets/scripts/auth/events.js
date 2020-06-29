@@ -12,6 +12,39 @@ const onSignUp = function (event) {
     .catch(ui.failure)
 }
 
+const onSignIn = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+
+  api.signIn(data)
+    .then(ui.signInSuccess)
+    .catch(ui.failure)
+}
+
+const onChangePass = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+
+  api.changePass(data)
+    .then(ui.changePassSuccess)
+    .catch(ui.failure)
+}
+
+const onSignOut = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+
+  api.signOut(data)
+    .then(ui.signOutSuccess)
+    .catch(ui.failure)
+}
+
 module.exports = {
-  onSignUp
+  onSignUp,
+  onSignIn,
+  onChangePass,
+  onSignOut
 }

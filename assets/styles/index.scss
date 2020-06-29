@@ -1,1 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
+
+.failure {
+  color: white;
+  background-color: #CD5C5C;
+  text-align: center;
+}
+
+.success {
+  color: white;
+  background: #2E8B57;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
