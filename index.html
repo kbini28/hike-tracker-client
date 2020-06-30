@@ -37,17 +37,37 @@
         </form>
       </section>
 
-      <section id="logged-in-view">
-        <form id="change-pass">
-          <h3>Change your password</h3>
-          <input type="password" required name="passwords[old]" placeholder="Old Password">
-          <input type="password" required name="passwords[new]" placeholder="New Password">
-          <button type="submit">Change Password</button>
-        </form>
-        <div id="sign-out">
-          <button>Sign Out</button>
-        </div>
-      </section>
+      <main id="logged-in-view">
+        <section id="settings">
+          <form id="change-pass">
+            <h3>Change your password</h3>
+            <input type="password" required name="passwords[old]" placeholder="Old Password">
+            <input type="password" required name="passwords[new]" placeholder="New Password">
+            <button type="submit">Change Password</button>
+          </form>
+          <div id="sign-out">
+            <button>Sign Out</button>
+          </div>
+        </section>
+        <section id="hike-log">
+          <form id="hike-inputs">
+            <fieldset>
+              <legend>Record your hike!</legend>
+              <input type="text" name="parkName" placeholder="Park Name">
+              <input type="text" name="location" placeholder="Location (city, state)">
+              <input type="number" name="distance" placeholder="Distance (in miles)">
+              <select name="difficulty" id="difficulty">
+                <option value="set" selected disabled hidden>Difficulty</option>
+                <option value="easy">Easy</option>
+                <option value="moderate">Moderate</option>
+                <option value="challenging">Challenging</option>
+                <option value="expert">Advanced</option>
+              </select>
+              <button type="submit">Submit your Hike</button>
+            </fieldset>
+          </form>
+        </section>
+      </main>
 
 
 
