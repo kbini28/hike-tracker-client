@@ -14,12 +14,37 @@ const onInputHike = function (event) {
     .catch(ui.failure)
 }
 
-// const onIndexHike = function (event) {
+const onIndexHikes = function (event) {
+  event.preventDefault()
+
+  api.indexHikes()
+    .then(ui.indexHikesSuccess)
+    .catch(ui.failure)
+}
+
+const onClearHikes = function (event) {
+  event.preventDefault()
+  ui.clearHikes()
+}
+
+const onDeleteHike = function (event) {
+  console.log('click event ', event)
+  event.preventDefault()
+  const id = event.target.getAttribute('data-id')
+  console.log(id)
+  api.deleteHike(id)
+    .then(ui.deleteHikeSuccess)
+    .catch(ui.failure)
+}
+
+// const onUpdateHike = function (event) {
 //   event.preventDefault()
-//
-//   api.indexHike()
 // }
 
 module.exports = {
-  onInputHike
+  onInputHike,
+  onIndexHikes,
+  onClearHikes,
+  onDeleteHike
+  // onUpdateHike
 }

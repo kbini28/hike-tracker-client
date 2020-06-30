@@ -1,4 +1,5 @@
 const store = require('./../store')
+const showHikesTemplate = require('./../templates/helpers/hike-index.handlebars')
 
 const failure = function () {
   $('form').trigger('reset')
@@ -11,7 +12,24 @@ const inputHikeSuccess = function (response) {
   store.hike = response.hike
 }
 
+const indexHikesSuccess = function (response) {
+  // console.log('ui response ', response)
+  const showHikes = showHikesTemplate({ hikes: response.hikes })
+  $('.content').append(showHikes)
+}
+
+const clearHikes = function () {
+  $('.content').empty()
+}
+
+const deleteHikeSuccess = function (id) {
+  $(`[data-id='${id}']`).remove()
+}
+
 module.exports = {
   failure,
-  inputHikeSuccess
+  inputHikeSuccess,
+  indexHikesSuccess,
+  clearHikes,
+  deleteHikeSuccess
 }

@@ -1,0 +1,12 @@
+{{#each hikes as |hike|}}
+  <section data-id="{{hike.id}}">
+    <h4>Park Name:</h4><h5>{{hike.parkName}}</h5>
+    <h4>Location:</h4><p>{{hike.location}}</p>
+    <h4>Distance:</h4><p>{{hike.distance}} miles</p>
+    <h4>Difficulty:</h4><p>{{hike.difficulty}}</p>
+    <p>User:</p><p>{{owner.email}}</p>
+    <button class"btn update-hike-btn" data-id="{{hike.id}}">Update</button>
+    <button class"btn remove-hike-btn" data-id="{{hike.id}}">Remove Hike</button>
+    <!-- add an update and a remove button on each post? -->
+  </section>
+{{/each}}
