@@ -53,19 +53,25 @@
           <form id="hike-inputs">
             <fieldset>
               <legend>Record your hike!</legend>
-              <input type="text" name="parkName" placeholder="Park Name">
-              <input type="text" name="location" placeholder="Location (city, state)">
-              <input type="number" name="distance" placeholder="Distance (in miles)">
-              <select name="difficulty" id="difficulty">
+              <input type="text" name="hike[parkName]" placeholder="Park Name">
+              <input type="text" name="hike[location]" placeholder="Location (city, state)">
+              <input type="number" name="hike[distance]" placeholder="Distance (in miles)">
+              <select name="hike[difficulty]" id="difficulty">
                 <option value="set" selected disabled hidden>Difficulty</option>
                 <option value="easy">Easy</option>
                 <option value="moderate">Moderate</option>
                 <option value="challenging">Challenging</option>
                 <option value="expert">Advanced</option>
               </select>
-              <button type="submit">Submit your Hike</button>
+              <button type="submit">Submit A Hike</button>
             </fieldset>
           </form>
+        </section>
+        <section>
+          <div id="hike-index">
+            <button type="submit">Show Hikes</button>
+            <p class="show-hike-index"></p>
+          </div>
         </section>
       </main>
 
