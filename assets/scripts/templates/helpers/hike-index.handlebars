@@ -1,12 +1,32 @@
 {{#each hikes as |hike|}}
-  <section data-id="{{hike.id}}">
+  <section data-id="{{hike._id}}">
     <h4>Park Name:</h4><h5>{{hike.parkName}}</h5>
     <h4>Location:</h4><p>{{hike.location}}</p>
     <h4>Distance:</h4><p>{{hike.distance}} miles</p>
     <h4>Difficulty:</h4><p>{{hike.difficulty}}</p>
     <p>User:</p><p>{{owner.email}}</p>
-    <button class"btn update-hike-btn" data-id="{{hike.id}}">Update</button>
-    <button class"btn remove-hike-btn" data-id="{{hike.id}}">Remove Hike</button>
-    <!-- add an update and a remove button on each post? -->
+
+    <!-- <form class="hike-updates" data-id="{{hike._id}}">
+      <fieldset>
+        <legend>Update your hike!</legend>
+        <input type="text" name="hike[parkName]" placeholder="Park Name">
+        <input type="text" name="hike[location]" placeholder="Location (city, state)">
+        <input type="number" name="hike[distance]" placeholder="Distance (in miles)">
+        <select name="hike[difficulty]"  required>
+          <option value="set" selected disabled hidden>Difficulty</option>
+          <option value="easy">Easy</option>
+          <option value="moderate">Moderate</option>
+          <option value="challenging">Challenging</option>
+          <option value="expert">Advanced</option>
+        </select>
+        <button type="submit" class="btn update-hike-btn" data-id="{{hike._id}}">Update</button>
+      </fieldset>
+    </form> -->
+    <!-- bootstrap form modal button -->
+    <div class="text-center hike-updates">
+      <a href="" class="btn update-hike-btn btn-default btn-rounded mb-4" data-id="{{hike._id}}" data-toggle="modal" data-target="#modalUpdateForm">Update</a>
+    </div>
+    <!-- <button class="btn update-hike-btn" data-id="{{hike._id}}">Update</button> -->
+    <button class="btn delete-hike-btn" data-id="{{hike._id}}">Remove Hike</button>
   </section>
 {{/each}}

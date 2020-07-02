@@ -17,7 +17,7 @@ const onInputHike = function (event) {
 const onIndexHikes = function (event) {
   event.preventDefault()
 
-  api.indexHikes()
+  api.indexHikes(event)
     .then(ui.indexHikesSuccess)
     .catch(ui.failure)
 }
@@ -34,17 +34,34 @@ const onDeleteHike = function (event) {
   console.log(id)
   api.deleteHike(id)
     .then(ui.deleteHikeSuccess)
+    .then(() => $(event.target).parent().remove())
     .catch(ui.failure)
 }
 
-// const onUpdateHike = function (event) {
+// const onTriggerUpdate = function (event) {
 //   event.preventDefault()
+//   $onUpdateHike.toggle()
 // }
+
+const onUpdateHike = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  const id = form.getAttribute('data-id')
+  // console.log('event id ', id)
+  api.updateHike(data, id)
+    .then(() => ui.updateHikeSuccess(data, id))
+    // .then(() => {
+    //   $('#modalUpdateForm').on('click', '.save-hike-button', ui.updateHikeSuccess(data, id))
+    // })
+    .catch(ui.failure)
+}
 
 module.exports = {
   onInputHike,
   onIndexHikes,
   onClearHikes,
-  onDeleteHike
-  // onUpdateHike
+  onDeleteHike,
+  // onTriggerUpdate,
+  onUpdateHike
 }

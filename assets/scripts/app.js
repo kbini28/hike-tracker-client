@@ -16,6 +16,10 @@ $(() => {
   $('#hike-inputs').on('submit', hikeEvents.onInputHike)
   $('#show-hikes-button').on('click', hikeEvents.onIndexHikes)
   $('#clear-hikes-button').on('click', hikeEvents.onClearHikes)
-  $('.content').on('click', '.remove-hike-btn', hikeEvents.onDeleteHike)
-  // $('.content').on('click', 'update-hike-btn', hikeEvents.onUpdateHike)
+  $('.content').on('click', '.delete-hike-btn', hikeEvents.onDeleteHike)
+  // activates the modal
+  $('#modalUpdateForm').trigger('click', '#show-hikes-button')
+  // targets the 'update' button within the modal
+  $('#modalUpdateForm').on('click', '.hike-updates', hikeEvents.onUpdateHike)
+  // $('.content').on('submit', '.hike-updates', hikeEvents.onUpdateHike)
 })
