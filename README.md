@@ -8,7 +8,8 @@ The current version does not provide additional user information such as usernam
 
   * [GitHub Client Application Repository] (https://github.com/kbini28/hike-tracker-client)
   * [GitHub API Repository](https://github.com/kbini28/hike-tracker-api)
-  * [Application](https://kbini28.github.io/hike-tracker-api/)
+  * [Heroku Database] (https://still-refuge-65541.herokuapp.com)
+  * [Application](https://kbini28.github.io/hike-tracker-client/)
 
 ## Planning Story
 
