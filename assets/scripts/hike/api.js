@@ -7,7 +7,7 @@ const inputHike = function (data, token) {
     method: 'POST',
     url: config.apiUrl + '/hikes',
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      Authorization: 'Bearer ' + store.user.token
     },
     data: {
       hike: {
@@ -25,7 +25,7 @@ const indexHikes = function () {
     method: 'GET',
     url: config.apiUrl + '/hikes',
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      Authorization: 'Bearer ' + store.user.token
     }
   })
 }
@@ -36,7 +36,7 @@ const deleteHike = function (dataId) {
     method: 'DELETE',
     url: config.apiUrl + '/hikes/' + dataId,
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      Authorization: 'Bearer ' + store.user.token
     }
   })
 }
@@ -47,7 +47,7 @@ const updateHike = function (data, id) {
     method: 'PATCH',
     url: config.apiUrl + '/hikes/' + id,
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      Authorization: 'Bearer ' + store.user.token
     },
     data: {
       hike: {

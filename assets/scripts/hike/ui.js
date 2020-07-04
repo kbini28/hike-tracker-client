@@ -22,6 +22,7 @@ const indexHikesSuccess = function (response) {
   } else {
     $('.content').append(showHikes)
   }
+  $('.hike-updates').toggle(false)
 }
 
 const clearHikes = function () {

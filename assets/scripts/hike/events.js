@@ -48,7 +48,7 @@ const onUpdateHike = function (event) {
   const form = event.target
   const data = getFormFields(form)
   const id = form.getAttribute('data-id')
-  // console.log('event id ', id)
+  console.log('event id ', id)
   api.updateHike(data, id)
     .then(() => ui.updateHikeSuccess(data, id))
     // .then(() => {
@@ -57,11 +57,17 @@ const onUpdateHike = function (event) {
     .catch(ui.failure)
 }
 
+const onToggleUpdateBtn = function (event) {
+  event.preventDefault()
+  $('.hike-updates').toggle()
+}
+
 module.exports = {
   onInputHike,
   onIndexHikes,
   onClearHikes,
   onDeleteHike,
   // onTriggerUpdate,
-  onUpdateHike
+  onUpdateHike,
+  onToggleUpdateBtn
 }

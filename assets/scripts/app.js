@@ -13,13 +13,16 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-pass').on('submit', authEvents.onChangePass)
   $('#sign-out').on('click', authEvents.onSignOut)
+  $('#change-pass-toggle').on('click', authEvents.onToggleChangePass)
+
   $('#hike-inputs').on('submit', hikeEvents.onInputHike)
   $('#show-hikes-button').on('click', hikeEvents.onIndexHikes)
   $('#clear-hikes-button').on('click', hikeEvents.onClearHikes)
   $('.content').on('click', '.delete-hike-btn', hikeEvents.onDeleteHike)
   // activates the modal
-  $('#modalUpdateForm').trigger('click', '#show-hikes-button')
+  // $('#modalUpdateForm').trigger('click', '#show-hikes-button')
   // targets the 'update' button within the modal
-  $('#modalUpdateForm').on('click', '.hike-updates', hikeEvents.onUpdateHike)
-  // $('.content').on('submit', '.hike-updates', hikeEvents.onUpdateHike)
+  // $('#update-inputs').on('click', '.save-update-btn', hikeEvents.onUpdateHike)
+  $('.content').on('submit', '.hike-updates', hikeEvents.onUpdateHike)
+  $('.content').on('click', '.update-hike-btn', hikeEvents.onToggleUpdateBtn)
 })

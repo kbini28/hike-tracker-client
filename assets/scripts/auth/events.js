@@ -42,9 +42,15 @@ const onSignOut = function (event) {
     .catch(ui.failure)
 }
 
+const onToggleChangePass = function (event) {
+  event.preventDefault()
+  $('.change-pass-toggle').toggle()
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePass,
-  onSignOut
+  onSignOut,
+  onToggleChangePass
 }

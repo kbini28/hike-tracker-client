@@ -1,12 +1,14 @@
+<h3 class="col-12">Review your previous hikes:</h3> <br>
+
 {{#each hikes as |hike|}}
-  <section data-id="{{hike._id}}">
+  <section class="col-4" data-id="{{hike._id}}">
     <h4>Park Name:</h4><h5>{{hike.parkName}}</h5>
     <h4>Location:</h4><p>{{hike.location}}</p>
     <h4>Distance:</h4><p>{{hike.distance}} miles</p>
     <h4>Difficulty:</h4><p>{{hike.difficulty}}</p>
     <p>User:</p><p>{{owner.email}}</p>
 
-    <!-- <form class="hike-updates" data-id="{{hike._id}}">
+    <form class="hike-updates" data-id="{{hike._id}}">
       <fieldset>
         <legend>Update your hike!</legend>
         <input type="text" name="hike[parkName]" placeholder="Park Name">
@@ -19,14 +21,14 @@
           <option value="challenging">Challenging</option>
           <option value="expert">Advanced</option>
         </select>
-        <button type="submit" class="btn update-hike-btn" data-id="{{hike._id}}">Update</button>
+        <button type="submit" class="btn btn-primary save-update-btn" data-id="{{hike._id}}">Save Update</button>
       </fieldset>
-    </form> -->
+    </form>
     <!-- bootstrap form modal button -->
-    <div class="text-center hike-updates">
+    <!-- <div class="text-center hike-updates">
       <a href="" class="btn update-hike-btn btn-default btn-rounded mb-4" data-id="{{hike._id}}" data-toggle="modal" data-target="#modalUpdateForm">Update</a>
-    </div>
-    <!-- <button class="btn update-hike-btn" data-id="{{hike._id}}">Update</button> -->
-    <button class="btn delete-hike-btn" data-id="{{hike._id}}">Remove Hike</button>
+    </div> -->
+    <button class="btn update-hike-btn btn-primary" data-id="{{hike._id}}">Update</button>
+    <button class="btn delete-hike-btn btn-primary" data-id="{{hike._id}}">Remove Hike</button>
   </section>
 {{/each}}

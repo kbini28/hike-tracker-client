@@ -1,15 +1,237 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
 
-.failure {
-  color: white;
-  background-color: #CD5C5C;
+* {
+  font-family: 'Cabin', sans-serif;
+}
+
+body {
+  background-image: url('public/mountains-blue.png');
+  background-position: top;
+  background-size: cover;
+  background-attachment: fixed;
+  /*margin: -10px -10px 0 -10px; did not need*/
+  padding: 20px;
   text-align: center;
 }
+
+.content {
+  display: inline-flex;
+  align-content: center;
+  flex-wrap: wrap;
+  // width: 30%
+  h3 {
+    text-align: center;
+    font-size: 36px;
+    color: #2b3b54;
+  }
+  input {
+    margin: 6px;
+    padding: 2px;
+  }
+  section {
+    background: rgba(185, 205, 223, .75);
+    border: 3px solid #2b3b54;
+    color: #2b3b54;
+    // margin: 2px;
+    // width: 30%;
+    .btn {
+      padding: 5px 20px;
+      margin: 5px;
+      background: #3e66a8;
+    }
+    &.btn:hover {
+      background-color: #3e66a8;
+      border: 1px solid rgba(223, 228, 236, .95);
+    }
+  }
+}
+
+// .fade-in {
+//   animation: fadeIn ease 2s;
+//   -webkit-animation: fadeIn ease 2s;
+//   -moz-animation: fadeIn ease 2s;
+//   -o-animation: fadeIn ease 2s;
+//   -ms-animation: fadeIn ease 2s;
+// }
+
+.failure {
+  background-color: #CD5C5C;
+  color: white;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 150px;
+  position: absolute;
+}
+
+h1 {
+  font-size: 75px;
+  padding: 15px;
+  padding-bottom: 0;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+header {
+  min-height: 100px;
+  padding: 15px;
+  color: #2b3b54;
+}
+
+.logged-out-view {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // background-color: rgba(223, 228, 236, 1);
+  .card {
+    background: rgba(223, 228, 236, .8);
+    min-width: 300px;
+  }
+  input {
+    border: 1px solid #afbccf;
+    background: rgba(223, 228, 236, .95);
+  }
+  .btn-primary {
+    padding: 5px 20px;
+    margin: 5px;
+    background: #3e66a8;
+  }
+  .btn-link {
+    color: #3e66a8;
+  }
+  label {
+    color: #2b3b54;
+  }
+}
+
+main {
+  background: linear-gradient(to top, rgba(62, 102, 136, .95), rgba(62, 102, 136, .55) 85%, rgba(62, 102, 136, .05));
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  // min-height: 70%;
+  margin: 0 -20px -20px -20px;
+  padding: 0;
+  position: absolute;
+  top: 250px;
+  border: 0;
+  // animation: mymove 2s;
+  // animation-iteration-count: 1;
+  nav .btn {
+    background-color: rgba(223, 228, 236, .95);
+    padding: 0 10px;
+    margin: 0 10px 5px 10px;
+    // &sign-out-btn {
+    //   align-content: left;
+    // }
+    &.btn:hover {
+      background-color: #3e66a8;
+      border: 1px solid rgba(223, 228, 236, .95);
+    }
+  }
+}
+
+
+// .nav-bar {
+//   float: left;
+// }
+//
+// .hike-log {
+//   float: right;
+// }
+
+nav {
+  color: #2b3b54;
+  background: rgba(168, 193, 215, .25);
+  border: 1px solid rgb(168, 193, 215);
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: center;
+  min-height: 325px;
+  margin: 10px;
+  padding: 5px 0;
+  button {
+    justify-content: center;
+    width: 200px;
+    margin: 10px 0;
+    padding: 5px 0;
+  }
+  .change-pass-toggle {
+    display: none;
+    padding: 2px;
+    margin: 5px 0;
+    input {
+      margin-bottom: 6px;
+    }
+    h3 {
+      font-size: 12px;
+    }
+  }
+}
+
+.hike-inputs {
+  align-content: center;
+  legend {
+    background-color: #2b3b54;
+    font-size: 30px;
+    width: 300px;
+    text-align: left;
+    color: #afbccf;
+    padding: 3px 9px;
+    margin-bottom: 10px;
+  }
+  fieldset {
+    border: 3px solid #2b3b54;
+    padding: 15px;
+    margin: 15px 10% 0 10%;
+    // min-width: 300px;
+  }
+  input {
+    margin: 6px;
+    padding: 2px;
+  }
+  select {
+    padding: 4px;
+  }
+  .btn {
+    background: #2b3b54;
+    &.btn:hover {
+      background-color: rgba(223, 228, 236, 1);
+      border: 1px solid #3e66a8;
+    }
+  }
+}
+
+// #logged-in-view {
+//     animation-timing-function: ease;
+// }
+// @keyframes mymove {
+//   from {bottom: 200px;}
+//   to {top: 60%;}
+// }
 
 .success {
   color: white;
   background: #2E8B57;
   text-align: center;
-  margin: 0;
-  padding: 0;
+  margin: 20;
+  padding: 10;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 150px;
+  position: absolute;
 }
