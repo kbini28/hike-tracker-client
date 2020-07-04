@@ -28,10 +28,10 @@ const onClearHikes = function (event) {
 }
 
 const onDeleteHike = function (event) {
-  console.log('click event ', event)
+  // console.log('click event ', event)
   event.preventDefault()
   const id = event.target.getAttribute('data-id')
-  console.log(id)
+  // console.log(id)
   api.deleteHike(id)
     .then(ui.deleteHikeSuccess)
     .then(() => $(event.target).parent().remove())
@@ -48,7 +48,7 @@ const onUpdateHike = function (event) {
   const form = event.target
   const data = getFormFields(form)
   const id = form.getAttribute('data-id')
-  console.log('event id ', id)
+  // console.log('event id ', id)
   api.updateHike(data, id)
     .then(() => ui.updateHikeSuccess(data, id))
     // .then(() => {

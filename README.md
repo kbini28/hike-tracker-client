@@ -1,129 +1,49 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# Take A Hike! - Client Application
 
-# browser-template
+This is the client side directory for the hike-tracking application. This application allows a user to create a new account and sign in to view and record their hikes. Hike information to be recorded and stored includes the park name and location, a distance and a difficulty rating. The user is able to record this information, and then view, edit and delete their previously recorded hikes. Users are able to change their password and sign out using the navigation bar.
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+The current version does not provide additional user information such as username, actual name or "home base" location, however that would be added in the next round of revisions.
 
-## Installation
+## Important Links
 
-1. [Download](../../archive/master.zip) this template.
-    - **Do Not Fork And Clone**
-    - Click the "Clone or Download" button and select "Download Zip".
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `ga-wdi-boston.browser-template` with the name of
-    your project.
-    - You can search for all instances of text in Atom by pressing
-    `commant + shift + f` on Mac or `ctrl + shift + f` on WSL.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
-1. Follow the instructions on your new repository's setup page. For details on
-   how to push to Github, refer to the section on Github entitled "…or push an existing
-   repository from the command line." Further documentation can be found [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
+  * [GitHub Client Application Repository] (https://github.com/kbini28/hike-tracker-client)
+  * [GitHub API Repository](https://github.com/kbini28/hike-tracker-api)
+  * [Application](https://kbini28.github.io/hike-tracker-api/)
 
-## Structure
+## Planning Story
 
-### Scripts
+I placed more emphasis with this application on preparation and planning. My plan, including wireframes, were more thought out, and my expectations for execution were more realistic (at least at the start). My plan was to develop the backend application first, then focus on frontend authentication. Once I was able to have a user sign up and in, I followed by adding a change password and sign out, including curl scripts to test each step along the way. I made sure to run both the front end server and back end api server to make sure authentication was successful.
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/app.js`](assets/scripts/app.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+From there I focused on CRUD actions for logging a hike; starting with creating a hike with a form, indexing all hikes, removing a hike, and finally updating a hike. The update action was by far the most difficult, because part of our challenge was to include a handlebars action in our application. I chose to index all hikes using a handlebars script, and then include a button for updating and removing a hike within each "content section" in handlebars. I wanted to challenge myself by adding a modal that would pop up and allow a user to update a hike through the modal, but was not able to connect the modal's html to my javascript and handlebars code. I instead chose to include a simple toggle to show and hide the update form, and will try to include a modal in version 2 or 3 when I am able.
 
-### Config
+I decided to save all of the styling until the very end this project, because I felt styling some elements first had complicated my code and made it more difficult to read and update in the first project. It helped keep my code cleaner, but ended up becoming more overwhelming, because I had to spend more time consistently on styling, rather than breaking up the day styling pieces. Overall I am happy with my styling - The accordion menu to sign up/in is my favorite part - but I still believe I can improve on what I have later.
 
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`assets/scripts/config.js`](assets/scripts/config.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
+### User Stories
 
-### Styles
+  * As a user, I want to be able to sign in securely.
+  * As a user, I want to view a list of all hikes I've recorded.
+  * As a user, I want to input my most recent hike, with at least a name and location.
+  * As a user, I want to rate my experience on that trail.
+  * As a user, I want to sign out from this application.
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
+My user stories could be broken down further into "input my most recent hike," "add a name and location," etc.
 
-### Forms and Using `getFormFields`
+### Technologies Used
 
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
+  * HTML
+  * CSS/SASS with Bootstrap
+  * Handlebars
+  * Javascript
+  * jQuery
 
-### Deployment
+### Unsolved Problems
 
-To deploy a browser-template based SPA, run `grunt deploy`.
+I want to be able to show the most recent post, after it is input. Like having a "most recent" section.
+Most of my unsolved problems are styling issues. I was unable to style my logged hikes much more than they are now without them either breaking or shifting. I want to add margins between each log, but with the bootstrap classes I cannot figure out how without the content shifting to the next line.
+Also I wanted to add more modals, bootstrap forms and styling that way, using a modal to update, and improving my navigation bar with better styling.
+I did not have enough time to add reviews/comments or additional user information above and beyond my MVP which I would like to add later.
 
-## Adding Images
+### Wireframe
 
-To add images to your project, you must store them in the `public` directory.
-To use the image in HTML or CSS, write the path to the image like this:
-
-```html
-<img src="public/cat.jpg">
-```
-or
-```css
-#my-cool-div {
-  background-image: url('public/cat.jpg')
-}
-```
-
-Note that there's no `./` or `/` in front of `public/filename.jpg`.
-
-## Adding Fonts
-
-To add custom fonts to your app, you can either use a CDN like Google Fonts, or
-you can download the fonts and save them in the `public` directory. If you use
-the former method, follow the directions on the website providing the fonts.
-
-For local fonts, put the files in `public`, and then import and use them in a
-`.scss` file like this:
-
-```scss
-@font-face {
-  font-family: 'Nature Beauty';
-  src: url('public/Nature-Beauty.ttf') format('truetype');
-}
-
-.element-with-custom-font {
-  font-family: 'Nature Beauty';
-}
-```
-
-## Tasks
-
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-- `grunt deploy`: builds and deploys master branch
-
-
-## Additional Resources
-
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+[Project ERD](https://i.imgur.com/YBIBhio.jpg)
+[Second ERD, after group discussion](https://i.imgur.com/1MfIHP8.jpg)

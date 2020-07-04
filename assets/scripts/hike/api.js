@@ -31,7 +31,7 @@ const indexHikes = function () {
 }
 
 const deleteHike = function (dataId) {
-  console.log('do i get here?', dataId)
+  // console.log('do i get here?', dataId)
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + '/hikes/' + dataId,
@@ -42,7 +42,7 @@ const deleteHike = function (dataId) {
 }
 
 const updateHike = function (data, id) {
-  console.log('update api ', data, id)
+  // console.log('update api ', data, id)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/hikes/' + id,

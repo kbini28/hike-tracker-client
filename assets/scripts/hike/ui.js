@@ -34,7 +34,7 @@ const deleteHikeSuccess = function (id) {
 }
 
 const updateHikeSuccess = function (data, id) {
-  console.log('ui data, id ', data, id)
+  // console.log('ui data, id ', data, id)
   $('form').trigger('reset')
   $(`[data-id='${id}']`).remove()
   store.hike = data.hike
