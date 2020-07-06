@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Take a Hike! Get Outta' Here!</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <div class="display-message">
+      <p id="message" class="fade-in"> </p>
+      </div>
+
+      <header class="brand-info">
+        <h1>Take a Hike!</h1>
+        <h2>(then log it here!)</h2>
+      </header>
+      <section id="logged-out-view" class="logged-out-view container">
+        <div id="accordion" class="col-12">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Sign In to Log a Hike
+                </button>
+              </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+              <form id="sign-in">
+                <div class="form-group">
+                  <label for="sign-in-email">Email Address</label>
+                  <input type="email" required name="credentials[email]" class="form-control" id="sign-in-email" aria-describedby="sign-in-emailHelp" placeholder="Enter email">
+                  <small id="sign-in-emailHelp" class="form-text text-muted">We'll never share your email with anyone else. Especially if it's fake.</small>
+                </div>
+                <div class="form-group">
+                  <label for="sign-in-password">Password</label>
+                  <input type="password" required name="credentials[password]" class="form-control" id="sign-in-password" placeholder="Password">
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="sign-in-check">
+                  <label class="form-check-label" for="sign-in-check">Check this box if you love hiking!</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  New in town? Sign Up First!
+                </button>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <form id="sign-up">
+                <div class="form-group">
+                  <label for="sign-up-email">Email address</label>
+                  <input type="email" required name="credentials[email]" class="form-control" id="sign-up-email" aria-describedby="sign-up-emailHelp" placeholder="Enter email">
+                  <small id="sign-up-emailHelp" class="form-text text-muted">Pick an email, any address! Just make sure it's not real.</small>
+                </div>
+                <div class="form-group">
+                  <label for="sign-up-password">Password</label>
+                  <input type="password" required name="credentials[password]" class="form-control" id="sign-up-password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <label for="sign-up-confirm">Password Confirmation</label>
+                  <input type="password" required name="credentials[password_confirmation]" class="form-control" id="sign-up-confirm" placeholder="Confirm Your Password">
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="sign-up-check">
+                  <label class="form-check-label" for="sign-up-check">No terms or conditions. Just check here if you're cool!</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section used to be for sign up and sign in>
+        <button>Sign In</button>
+        <form id="sign-in" class="login">
+          <h3>Sign In</h3>
+          <input type="email" required name="credentials[email]" placeholder="Email">
+          <input type="password" required name="credentials[password]" placeholder="Password">
+          <button type="submit">Submit</button>
+        </form>
+        <button>Create an Account</button>
+        <form id="sign-up" class="login hidden">
+          <h3>Create an account!</h3>
+          <input type="email" required name="credentials[email]" placeholder="Email">
+          <input type="password" required name="credentials[password]" placeholder="Password">
+          <input type="password" required name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <button type="submit">Submit</button>
+        </form>
+      </section> -->
+
+      <main id="logged-in-view" class="hidden">
+        <section class="container-fluid">
+          <section class="row">
+            <div id="nav-bar" class="col-3">
+              <nav class="hidden nav-bar">
+
+                <button id="sign-out" class="btn sign-out-btn">Sign Out</button>
+                <button id="change-pass-toggle" class="btn change-pass-btn">Change Password</button>
+                <form id="change-pass" class="change-pass-toggle">
+                  <input type="password" required name="passwords[old]" placeholder="Old Password"> <br>
+                  <input type="password" required name="passwords[new]" placeholder="New Password"> <br>
+                  <button type="submit" class="btn index-btn">Update</button>
+                </form>
+                <br>
+                <button id="show-hikes-button" class="btn index-btn">Show Hikes</button>
+                <button id="clear-hikes-button" class="btn index-btn">Clear Hikes</button>
+                <p>More options coming soon!</p>
+              </nav>
+            </div>
+
+            <div class="filler col-1"></div>
+
+            <div id="hike-log" class="hike-log col-6">
+              <form id="hike-inputs" class="hike-inputs">
+                <fieldset>
+                  <legend>Record your hike!</legend>
+                  <input type="text" name="hike[parkName]" placeholder="Park Name" required>
+                  <input type="text" name="hike[location]" placeholder="Location (city, state)" required>
+                  <input type="number" name="hike[distance]" placeholder="Distance (in miles)" required>
+                  <select name="hike[difficulty]" id="difficulty" required>
+                    <option value="set" selected disabled hidden>Difficulty</option>
+                    <option value="easy">Easy</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="challenging">Challenging</option>
+                    <option value="expert">Advanced</option>
+                  </select>
+                  <br>
+                  <button type="submit" class="btn btn-primary">Submit A Hike</button>
+                </fieldset>
+              </form>
+            </div>
+          </section>
+        </section>
+
+        <section class="index-handlebars container">
+          <!-- type="submit" will add the "button" features to a clickable button -->
+          <div class="row">
+            <div id="content" class="content"></div>
+          </div>
+          <!-- this is the bootstrap form modal for updating a hike -->
+          <!-- <form id="update-inputs" data-id="hike.id">
+            <div class="modal fade" id="modalUpdateForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Update your logged hike</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                      <i class="fas fa-user prefix grey-text"></i>
+                      <input type="text" id="update-parkName" class="form-control validate" placeholder="hike[parkName]" name="hike[parkName]">
+                      <label data-error="wrong" data-success="right" for="update-parkName">Park Name</label>
+                    </div>
+
+                    <div class="md-form mb-4">
+                      <i class="fas fa-envelope prefix grey-text"></i>
+                      <input type="text" id="update-location" class="form-control validate" placeholder="hike[location]" name="hike[location]">
+                      <label data-error="wrong" data-success="right" for="update-location">Location</label>
+                    </div>
+
+                    <div class="md-form mb-5">
+                      <i class="fas fa-user prefix grey-text"></i>
+                      <input type="number" id="update-distance" class="form-control validate" placeholder="hike[distance]" name="hike[distance]">
+                      <label data-error="wrong" data-success="right" for="update-distance">Distance</label>
+                    </div>
+
+                    <div class="md-form mb-4">
+                      <i class="fas fa-envelope prefix grey-text"></i>
+    comment this out <input type="text" id="form4" class="form-control validate" placeholder="">
+                      <select name="hike[difficulty]" id="update-difficulty" class="form-control validate" name="hike[difficulty]">
+                        <option value="set" selected disabled hidden>Difficulty</option>
+                        <option value="easy">Easy</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="challenging">Challenging</option>
+                        <option value="expert">Advanced</option>
+                      </select>
+                      <label data-error="wrong" data-success="right" for="update-difficulty">Difficulty</label>
+                    </div>
+
+                  </div>
+                  <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn save-update-btn btn-indigo">Save Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form> -->
+        </section>
+      </main>
+
+
+
+    </body>
+</html>
