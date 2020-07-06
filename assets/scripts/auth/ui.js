@@ -21,7 +21,7 @@ const signInSuccess = function (response) {
 
 const changePassSuccess = function (response) {
   $('form').trigger('reset')
-  $('#message').text('Password successfully updated').show().removeClass().addClass('success').delay(4000).fadeOut()
+  $('#message').text('Password updated').show().removeClass().addClass('success').delay(4000).fadeOut()
   $('.change-pass-toggle').toggle(false)
 }
 
